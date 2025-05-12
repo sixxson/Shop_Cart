@@ -10,7 +10,7 @@ const Logo = ({
   spanDesign?: string;
 }) => {
   return (
-    <Link href={"/"} className="inline-flex mx-4 md:mx-8">
+    <Link href={"/"} className="inline-flex">
       <h2
         className={cn(
           "text-2xl text-shop_dark_green font-black tracking-wider uppercase hover:text-shop_light_green hoverEffect group font-sans",

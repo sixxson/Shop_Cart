@@ -10,9 +10,9 @@ export function MainNav() {
   const pathname = usePathname();
 
   return (
-    <div className="mr-4 hidden md:flex">
+    <div className="hidden md:flex">
       <Logo className='' spanDesign='' />
-      <nav className="flex w-full justify-between items-center gap-4 text-sm xl:gap-6">
+      <nav className="flex w-full px-4 justify-between items-center gap-4 text-sm xl:gap-6">
         {headerData?.map((item) => (
           <Link
             key={item?.title}

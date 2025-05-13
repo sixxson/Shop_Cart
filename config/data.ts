@@ -28,3 +28,27 @@ export const productType = [
   { title: "Refrigerators", value: "refrigerators" },
   { title: "Others", value: "others" },
 ];
+
+
+export const ContactItemData = [
+  {
+    title: "Visit Us",
+    subtitle: "New Orlean, USA",
+    icon: "MapPin"
+  },
+  {
+    title: "Call Us",
+    subtitle: "+12 958 648 597",
+    icon: "Phone"
+  },
+  {
+    title: "Working Hours",
+    subtitle: "Mon - Sat: 10:00 AM - 7:00 PM",
+    icon: "Clock"
+  },
+  {
+    title: "Email Us",
+    subtitle: "Shopcart@gmail.com",
+    icon: "Mail"
+  }
+];

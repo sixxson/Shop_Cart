@@ -1,10 +1,18 @@
 import Logo from "./logo";
 import { SubText, SubTitle } from "./ui/text";
 import Link from "next/link";
-import { quickLinksData } from "../config/data";
+import { ContactItemData, quickLinksData } from "../config/data";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import SocialMedia from "./SocialMedia";
+import { MapPin, Phone, Clock, Mail } from "lucide-react";
+
+const iconMap = {
+  MapPin,
+  Phone,
+  Clock,
+  Mail,
+};
 
 export default function SiteFooter() {
   return (
@@ -40,11 +48,22 @@ export default function SiteFooter() {
             </ul>
           </div>
           <div>
+            <SubTitle className="text-slate-800 dark:text-slate-300 md:border-0 sm:border-b sm:border-slate-500 sm:border-dashed py-2">
+              Contact Us
+            </SubTitle>
             <ul className="space-y-3 mt-4">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+              {ContactItemData.map((item, i) => {
+                const Icon = iconMap[item.icon as keyof typeof iconMap];
+                return (
+                  <li key={i} className="group flex items-start space-x-4">
+                    <Icon className="h-6 w-6 text-gray-600 group-hover:text-primary transition-colors" />
+                    <div>
+                      <h4 className="font-semibold">{item.title}</h4>
+                      <p className="text-sm text-gray-500">{item.subtitle}</p>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div className="space-y-4">

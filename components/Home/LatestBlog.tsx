@@ -7,7 +7,6 @@ import { Calendar } from "lucide-react";
 import { Title } from "../ui/text";
 import dayjs from "dayjs";
 
-
 const LatestBlog = async () => {
   const blogs = await getLatestBlogs();
   return (
@@ -27,7 +26,7 @@ const LatestBlog = async () => {
                 />
               </Link>
             )}
-            <div className="bg-shop_light_bg p-5">
+            <div className="bg-none p-5">
               <div className="text-xs flex items-center gap-5">
                 <div className="flex items-center relative group cursor-pointer">
                   {blog?.blogcategories?.map((item, index) => (

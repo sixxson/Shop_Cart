@@ -4,7 +4,7 @@ import Logo from "@/components/logo";
 
 const NotFoundPage = () => {
   return (
-    <div className="bg-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-10 md:py-32">
+    <div className="bg-none flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-10 md:py-32">
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <Logo />
@@ -27,7 +27,7 @@ const NotFoundPage = () => {
             </Link>
             <Link
               href="/help"
-              className="w-full flex items-center justify-center px-4 py-2 border border-gray-300 text-sm font-semibold rounded-md text-amazonBlue bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amazonBlue"
+              className="w-full flex items-center justify-center px-4 py-2 border border-gray-300 text-sm font-semibold rounded-md text-amazonBlue bg-none hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amazonBlue"
             >
               Help
             </Link>

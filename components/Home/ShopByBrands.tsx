@@ -32,7 +32,7 @@ const extraData = [
 const ShopByBrands = async () => {
   const brands = await getAllBrands();
   return (
-    <div className="mb-10 lg:mb-20 bg-shop_light_bg p-5 lg:p-7 rounded-md">
+    <div className="mb-10 lg:mb-20 bg-none p-5 lg:p-7 rounded-md">
       <div className="flex items-center gap-5 justify-between mb-10">
         <Title>Shop By Brands</Title>
         <Link
@@ -47,7 +47,7 @@ const ShopByBrands = async () => {
           <Link
             key={brand?._id}
             href={{ pathname: "/shop", query: { brand: brand?.slug?.current } }}
-            className="bg-white w-34 h-24 flex items-center justify-center rounded-md overflow-hidden hover:shadow-lg shadow-shop_dark_green/20 hoverEffect"
+            className="bg-none w-34 h-24 flex items-center justify-center rounded-md overflow-hidden hover:shadow-lg shadow-shop_dark_green/20 hoverEffect"
           >
             {brand?.image && (
               <Image

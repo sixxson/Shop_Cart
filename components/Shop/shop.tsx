@@ -138,7 +138,7 @@ export default function Shop({ categories, brands }: Props) {
           <div className="flex-1 pt-5">
             <div className="h-[calc(100vh-160px)] overflow-y-auto pr-2 scrollbar-hide">
               {loading ? (
-                <div className="p-20 flex flex-col gap-2 items-center justify-center bg-white">
+                <div className="p-20 flex flex-col gap-2 items-center justify-center bg-none">
                   <Loader2 className="w-10 h-10 text-shop_dark_green animate-spin" />
                   <p className="font-semibold tracking-wide text-base">
                     Product is loading . . .
@@ -151,7 +151,7 @@ export default function Shop({ categories, brands }: Props) {
                   ))}
                 </div>
               ) : (
-                <NoProductAvailable className="bg-white mt-0" />
+                <NoProductAvailable className="bg-none mt-0" />
               )}
             </div>
           </div>

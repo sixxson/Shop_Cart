@@ -3,44 +3,50 @@
 ### 1. Product Listing
 
 - Hiển thị danh sách sản phẩm với hình ảnh, tên, giá, mô tả ngắn.
-- Xem chi tiết sản phẩm: mô tả đầy đủ, đánh giá, số lượng còn lại.
+- Khi người dùng nhấn vào sản phẩm, sẽ chuyển đến trang chi tiết với mô tả đầy đủ, đánh giá, số lượng còn lại.
+- Lấy dữ liệu sản phẩm từ database hoặc CMS, render danh sách và chi tiết sản phẩm.
 
 ### 2. Product Search & Filter
 
-- Tìm kiếm sản phẩm theo tên, danh mục.
+- Cho phép tìm kiếm sản phẩm theo tên hoặc danh mục.
 - Lọc sản phẩm theo giá, loại, đánh giá.
+- Sử dụng các query/filter trên dữ liệu sản phẩm, cập nhật UI theo kết quả tìm kiếm/lọc.
 
 ### 3. Shopping Cart
 
-- Thêm sản phẩm vào giỏ hàng.
+- Thêm sản phẩm vào giỏ hàng từ trang danh sách hoặc chi tiết sản phẩm.
 - Cập nhật số lượng hoặc xóa sản phẩm khỏi giỏ.
 - Hiển thị tổng tiền và số lượng sản phẩm trong giỏ.
+- Quản lý giỏ hàng bằng state (localStorage/zustand), tính tổng tiền và số lượng động.
 
 ### 4. User Authentication
 
-- Đăng ký tài khoản mới.
-- Đăng nhập, đăng xuất.
-- Bảo vệ các trang yêu cầu đăng nhập (ví dụ: đặt hàng, xem lịch sử).
+- Đăng ký tài khoản mới, đăng nhập, đăng xuất.
+- Bảo vệ các trang yêu cầu đăng nhập như đặt hàng, xem lịch sử đơn hàng.
+- Sử dụng Clerk để xác thực, lưu token, kiểm tra quyền truy cập các route.
 
 ### 5. Order Placement & History
 
-- Đặt hàng từ giỏ hàng.
-- Lưu thông tin đơn hàng vào database.
-- Xem lịch sử các đơn hàng đã đặt.
+- Đặt hàng từ giỏ hàng, lưu thông tin đơn hàng vào database.
+- Người dùng có thể xem lại lịch sử các đơn hàng đã đặt.
+- Khi đặt hàng, gửi dữ liệu lên server, lưu vào database, lấy lịch sử đơn hàng theo user.
 
 ### 6. Admin Dashboard
 
 - Quản lý sản phẩm: thêm, sửa, xóa sản phẩm.
-- Quản lý đơn hàng: xem, cập nhật trạng thái đơn hàng.
-- Quản lý người dùng.
+- Quản lý đơn hàng: xem, cập nhật trạng thái đơn hàng (đang xử lý, đã giao...).
+- Quản lý người dùng: xem danh sách, phân quyền.
+- Chỉ admin truy cập được, thao tác CRUD với sản phẩm, đơn hàng, người dùng.
 
 ### 7. Sales Statistics (Admin)
 
 - Thống kê doanh thu, số lượng đơn hàng, sản phẩm bán chạy.
+- Tổng hợp dữ liệu từ đơn hàng, hiển thị biểu đồ bằng recharts.
 
 ### 8. Responsive Design
 
 - Giao diện tối ưu cho cả máy tính và thiết bị di động.
+- Sử dụng Tailwind CSS, Radix UI và các component responsive.
 
 ---
 

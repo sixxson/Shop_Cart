@@ -1,24 +1,19 @@
+"use client";
+
 import { MainNav } from "./main-nav";
 import { MobileNav } from "./mobile-nav";
 import { CommandMenu } from "./command-menu";
 import { ModeSwitcher } from "./mode-switcher";
-// import {
-//   SignInButton,
-//   SignUpButton,
-//   SignedIn,
-//   SignedOut,
-//   UserButton,
-// } from "@clerk/nextjs";
 import CartIcon from "./CartIcon";
 import FavoriteButton from "./FavoriteButton";
 import SignIn from "./SignIn";
-import { ClerkLoaded, SignedIn, UserButton } from "@clerk/nextjs";
-import { auth, currentUser } from "@clerk/nextjs/server";
+import { ClerkLoaded, SignedIn, UserButton, useUser } from "@clerk/nextjs";
+import { ShoppingBag } from "lucide-react";
+import { useRouter } from "next/navigation";
 
-export default async function SiteHeader() {
-  const user = await currentUser();
-  const { userId } = await auth();
-  console.log(userId);
+export default function SiteHeader() {
+  const { user } = useUser();
+  const router = useRouter();
 
   return (
     <header className="border-grid sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -34,10 +29,21 @@ export default async function SiteHeader() {
               <CartIcon />
               <FavoriteButton />
               <ClerkLoaded>
-                <SignedIn>
-                  <UserButton />
-                </SignedIn>
-                {!user && <SignIn />}
+                {user ? (
+                  <SignedIn>
+                    <UserButton>
+                      <UserButton.MenuItems>
+                        <UserButton.Action
+                          label="Orders"
+                          labelIcon={<ShoppingBag />}
+                          onClick={() => router.push("/orders")}
+                        />
+                      </UserButton.MenuItems>
+                    </UserButton>
+                  </SignedIn>
+                ) : (
+                  <SignIn />
+                )}
               </ClerkLoaded>
               <ModeSwitcher />
             </nav>

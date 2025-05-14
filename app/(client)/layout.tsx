@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/Theme/Theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import SiteFooter from "@/components/site-footer";
-import SiteHeader from "../../components/site-header";
+import SiteHeader from "@/components/site-header";
 
 export const metadata: Metadata = {
   title: {

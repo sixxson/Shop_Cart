@@ -29,7 +29,7 @@ const getCategories = async (quantity?: number) => {
     });
     return data;
   } catch (error) {
-    console.log("Error fetching categories", error);
+    console.error("Error fetching categories", error);
     return [];
   }
 };
@@ -39,7 +39,7 @@ const getAllBrands = async () => {
     const { data } = await sanityFetch({ query: BRANDS_QUERY });
     return data ?? [];
   } catch (error) {
-    console.log("Error fetching all brands:", error);
+    console.error("Error fetching all brands:", error);
     return [];
   }
 };
@@ -49,7 +49,7 @@ const getLatestBlogs = async () => {
     const { data } = await sanityFetch({ query: LATEST_BLOG_QUERY });
     return data ?? [];
   } catch (error) {
-    console.log("Error fetching latest Blogs:", error);
+    console.error("Error fetching latest Blogs:", error);
     return [];
   }
 };
@@ -58,7 +58,7 @@ const getDealProducts = async () => {
     const { data } = await sanityFetch({ query: DEAL_PRODUCTS });
     return data ?? [];
   } catch (error) {
-    console.log("Error fetching deal Products:", error);
+    console.error("Error fetching deal Products:", error);
     return [];
   }
 };
@@ -110,7 +110,7 @@ const getAllBlogs = async (quantity: number) => {
     });
     return data ?? [];
   } catch (error) {
-    console.log("Error fetching all brands:", error);
+    console.error("Error fetching all brands:", error);
     return [];
   }
 };
@@ -123,7 +123,7 @@ const getSingleBlog = async (slug: string) => {
     });
     return data ?? [];
   } catch (error) {
-    console.log("Error fetching all brands:", error);
+    console.error("Error fetching all brands:", error);
     return [];
   }
 };
@@ -134,7 +134,7 @@ const getBlogCategories = async () => {
     });
     return data ?? [];
   } catch (error) {
-    console.log("Error fetching all brands:", error);
+    console.error("Error fetching all brands:", error);
     return [];
   }
 };
@@ -147,7 +147,7 @@ const getOthersBlog = async (slug: string, quantity: number) => {
     });
     return data ?? [];
   } catch (error) {
-    console.log("Error fetching all brands:", error);
+    console.error("Error fetching all brands:", error);
     return [];
   }
 };

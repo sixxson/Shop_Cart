@@ -60,7 +60,7 @@ const CartPage = () => {
         setSelectedAddress(data[0]); // Optional: select first address if no default
       }
     } catch (error) {
-      console.log("Addresses fetching error:", error);
+      console.error("Addresses fetching error:", error);
     } finally {
       setLoading(false);
     }

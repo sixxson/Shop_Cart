@@ -31,8 +31,6 @@ export default function EmptyCart() {
             layout="fill"
             objectFit="contain"
             className="drop-shadow-lg"
-            width={192}
-            height={192}
           />
           <motion.div
             animate={{

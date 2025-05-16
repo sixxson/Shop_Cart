@@ -3,6 +3,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { Title } from "../ui/text";
 
+/**
+ * HomeBanner component displays a promotional banner on the homepage.
+ *
+ * Features:
+ * - Shows a title with a promotional message.
+ * - Includes a "Buy Now" button that links to the shop page.
+ * - Displays a banner image on medium and larger screens.
+ *
+ * @returns {JSX.Element} The rendered HomeBanner component.
+ */
+
 const HomeBanner = () => {
   return (
     <div className="py-16 md:py-0 bg-shop_light_pink dark:bg-[#b4aba2] rounded-lg px-10 lg:px-24 flex items-center justify-between">

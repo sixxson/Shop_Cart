@@ -25,6 +25,20 @@ interface Props {
   isStock?: number | undefined;
 }
 
+/**
+ * Displays a main product image with animated transitions and a set of selectable image thumbnails.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {Array} props.images - An array of image objects to display. Each image should have a unique `_key` property.
+ * @param {number} props.isStock - Indicates the stock status of the product. If `0`, the main image is shown with reduced opacity.
+ *
+ * @returns {JSX.Element} The rendered image viewer component with thumbnails.
+ *
+ * @example
+ * <ImageView images={productImages} isStock={productStock} />
+ */
+
 const ImageView = ({ images = [], isStock }: Props) => {
   const [active, setActive] = useState(images[0]);
 

@@ -1,9 +1,19 @@
+
 import React from "react";
 import { Category } from "@/sanity.types";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
 import { Title } from "../ui/text";
+
+/**
+ * Renders a list of popular product categories for the home page.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {Category[]} props.categories - An array of category objects to display.
+ * @returns {JSX.Element} The rendered component displaying categories with images and titles.
+ */
 
 const HomeCategories = ({ categories }: { categories: Category[] }) => {
   return (

@@ -10,6 +10,17 @@ import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import { Button } from "../ui/button";
 import Logo from "../logo";
 
+/**
+ * Renders a card prompting users to sign in or create an account to access their cart.
+ *
+ * @param details - Optional message displayed to the user. Defaults to a message encouraging login to view cart items and checkout.
+ *
+ * @remarks
+ * - Displays a logo, a welcome message, and a customizable details message.
+ * - Provides "Sign in" and "Create an account" buttons, each opening a modal for authentication.
+ * - Uses Tailwind CSS classes for styling and layout.
+ */
+
 const NoAccess = ({
   details = "Log in to view your cart items and checkout. Don't miss out on your favorite products!",
 }: {

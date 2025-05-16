@@ -1,5 +1,3 @@
-"use client";
-
 import { MainNav } from "./main-nav";
 import { MobileNav } from "./mobile-nav";
 import { CommandMenu } from "./command-menu";
@@ -7,13 +5,18 @@ import { ModeSwitcher } from "./mode-switcher";
 import CartIcon from "./CartIcon";
 import FavoriteButton from "./FavoriteButton";
 import SignIn from "./SignIn";
-import { ClerkLoaded, SignedIn, UserButton, useUser } from "@clerk/nextjs";
-import { ShoppingBag } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { ClerkLoaded } from "@clerk/nextjs";
+import { auth, currentUser } from "@clerk/nextjs/server";
+import { getMyOrders } from "../sanity/queries";
+import UserMenu from "./user-menu";
 
-export default function SiteHeader() {
-  const { user } = useUser();
-  const router = useRouter();
+export default async function SiteHeader() {
+  const user = await currentUser();
+  const { userId } = await auth();
+  let orders = null;
+  if (userId) {
+    orders = await getMyOrders(userId);
+  }
 
   return (
     <header className="border-grid sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -30,17 +33,18 @@ export default function SiteHeader() {
               <FavoriteButton />
               <ClerkLoaded>
                 {user ? (
-                  <SignedIn>
-                    <UserButton>
-                      <UserButton.MenuItems>
-                        <UserButton.Action
-                          label="Orders"
-                          labelIcon={<ShoppingBag />}
-                          onClick={() => router.push("/orders")}
-                        />
-                      </UserButton.MenuItems>
-                    </UserButton>
-                  </SignedIn>
+                  <UserMenu
+                    orders={
+                      Array.isArray(orders)
+                        ? orders.map((order) => ({
+                            ...order,
+                            products: Array.isArray(order.products)
+                              ? order.products
+                              : [],
+                          }))
+                        : []
+                    }
+                  />
                 ) : (
                   <SignIn />
                 )}

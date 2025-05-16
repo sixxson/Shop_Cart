@@ -32,7 +32,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Title } from "@/components/ui/text";
 
-const CartPage = () => {
+export default function CartPage() {
   const {
     deleteCartProduct,
     getTotalPrice,
@@ -99,7 +99,7 @@ const CartPage = () => {
     }
   };
   return (
-    <div className="bg-gray-50 pb-52 md:pb-10">
+    <div className="pb-52 md:pb-10">
       {isSignedIn ? (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
           {groupedItems?.length ? (
@@ -330,6 +330,4 @@ const CartPage = () => {
       )}
     </div>
   );
-};
-
-export default CartPage;
+}

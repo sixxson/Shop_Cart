@@ -4,6 +4,16 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+/**
+ * Renders a visually engaging empty cart state with animation and a call-to-action.
+ *
+ * This component displays an animated shopping cart illustration and a message
+ * encouraging users to discover products when their cart is empty. It uses Framer Motion
+ * for subtle animations and Tailwind CSS for styling.
+ *
+ * @returns {JSX.Element} The rendered empty cart UI.
+ */
+
 export default function EmptyCart() {
   return (
     <div className="py-10 md:py-20 bg-gradient-to-b from-blue-50 to-white flex items-center justify-center p-4">

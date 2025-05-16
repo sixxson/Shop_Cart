@@ -8,6 +8,18 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 
+/**
+ * Displays the characteristics of a given product inside an accordion UI component.
+ *
+ * @param product - The product object whose characteristics are to be displayed. Can be `Product`, `null`, or `undefined`.
+ * @returns A React component that renders product details such as brand, collection, type, and stock status.
+ *
+ * @remarks
+ * - Fetches the brand information asynchronously based on the product's slug.
+ * - Uses an accordion to show or hide the characteristics.
+ * - Displays placeholder or fallback values if product or brand data is missing.
+ */
+
 const ProductCharacteristics = async ({
   product,
 }: {

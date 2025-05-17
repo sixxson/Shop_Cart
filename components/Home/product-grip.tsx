@@ -10,7 +10,23 @@ import NoProductAvailable from "../NoProductAvailable";
 import ProductCard from "../ProductCard";
 import HomeTabbar from "./home-tabbar";
 
-const ProductGrid = () => {
+/**
+ * Renders a grid of products based on the selected product type tab.
+ *
+ * Fetches products from a backend using a GROQ query filtered by the selected variant.
+ * Displays a loading indicator while fetching, a grid of product cards when products are available,
+ * or a fallback component when no products are found.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered product grid with tab selection, loading state, and product cards.
+ *
+ * @example
+ * ```tsx
+ * <ProductGrid />
+ * ```
+ */
+
+export default function ProductGrid() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
   const [selectedTab, setSelectedTab] = useState(productType[0]?.title || "");
@@ -66,5 +82,4 @@ const ProductGrid = () => {
       )}
     </div>
   );
-
-};export default ProductGrid;
+}

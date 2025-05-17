@@ -21,6 +21,24 @@ interface OrderDetailsDialogProps {
   onClose: () => void;
 }
 
+/**
+ * Displays a dialog with detailed information about a specific order.
+ *
+ * @component
+ * @param {OrderDetailsDialogProps} props - The props for the OrderDetailDialog component.
+ * @param {Order} props.order - The order object containing details to display. If not provided, the dialog is not rendered.
+ * @param {boolean} props.isOpen - Controls whether the dialog is open or closed.
+ * @param {() => void} props.onClose - Callback function to close the dialog.
+ *
+ * @returns {JSX.Element | null} A dialog displaying order details, including customer info, invoice, product list, and pricing summary, or null if no order is provided.
+ *
+ * @example
+ * <OrderDetailDialog
+ *   order={order}
+ *   isOpen={isDialogOpen}
+ *   onClose={handleClose}
+ * />
+ */
 const OrderDetailDialog: React.FC<OrderDetailsDialogProps> = ({
   order,
   isOpen,

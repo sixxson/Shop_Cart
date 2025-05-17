@@ -15,7 +15,26 @@ import toast from "react-hot-toast";
 import PriceFormatter from "../PriceFormatter";
 import OrderDetailDialog from "./OrderDetailDialog";
 
-const OrdersComponent = ({ orders }: { orders: MY_ORDERS_QUERYResult }) => {
+/**
+ * Renders a table of user orders with interactive rows and order details dialog.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {MY_ORDERS_QUERYResult} props.orders - Array of order objects to display.
+ *
+ * @description
+ * - Displays each order as a clickable table row with summary information.
+ * - Shows order number, date, customer name, email, total price, status, and invoice number.
+ * - Clicking a row opens a dialog with detailed order information.
+ * - Includes a delete icon per row, which triggers a toast error (admin-only action).
+ * - Uses tooltips to provide additional UI hints.
+ *
+ * @example
+ * ```tsx
+ * <OrdersComponent orders={ordersData} />
+ * ```
+ */
+export default function OrdersComponent({ orders }: { orders: MY_ORDERS_QUERYResult }) {
   const [selectedOrder, setSelectedOrder] = useState<
     MY_ORDERS_QUERYResult[number] | null
   >(null);
@@ -101,5 +120,3 @@ const OrdersComponent = ({ orders }: { orders: MY_ORDERS_QUERYResult }) => {
     </>
   );
 };
-
-export default OrdersComponent;

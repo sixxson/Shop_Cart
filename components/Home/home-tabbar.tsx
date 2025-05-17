@@ -1,12 +1,22 @@
 "use client";
 import Link from "next/link";
-import { productType } from "../../config/data";
+import { productType } from "@/config/data";
 interface Props {
   selectedTab: string;
   onTabSelect: (tab: string) => void;
 }
 
-const HomeTabbar = ({ selectedTab, onTabSelect }: Props) => {
+/**
+ * HomeTabbar component renders a tab bar for selecting product types and a link to view all products.
+ *
+ * @param {Props} props - The props for the HomeTabbar component.
+ * @param {string} props.selectedTab - The currently selected tab.
+ * @param {(tab: string) => void} props.onTabSelect - Callback function invoked when a tab is selected.
+ *
+ * @returns {JSX.Element} The rendered HomeTabbar component.
+ */
+
+export default function HomeTabbar({ selectedTab, onTabSelect }: Props) {
   return (
     <div className="flex items-center flex-wrap gap-5 justify-between">
       <div className="flex items-center gap-1.5 text-sm font-semibold">
@@ -30,6 +40,4 @@ const HomeTabbar = ({ selectedTab, onTabSelect }: Props) => {
       </Link>
     </div>
   );
-};
-
-export default HomeTabbar;
+}

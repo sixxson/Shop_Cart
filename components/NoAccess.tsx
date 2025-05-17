@@ -5,10 +5,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from "./ui/card";
 import { SignInButton, SignUpButton } from "@clerk/nextjs";
-import { Button } from "../ui/button";
-import Logo from "../logo";
+import { Button } from "./ui/button";
+import Logo from "./logo";
 
 /**
  * Renders a card prompting users to sign in or create an account to access their cart.

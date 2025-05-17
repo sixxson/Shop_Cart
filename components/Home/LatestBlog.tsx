@@ -1,3 +1,4 @@
+
 import React from "react";
 import { getLatestBlogs } from "@/sanity/queries";
 import Image from "next/image";
@@ -7,7 +8,20 @@ import { Calendar } from "lucide-react";
 import { Title } from "../ui/text";
 import dayjs from "dayjs";
 
-const LatestBlog = async () => {
+/**
+ * Asynchronously fetches and displays the latest blog posts in a responsive grid layout.
+ *
+ * - Retrieves blog data using the `getLatestBlogs` query.
+ * - Each blog post displays its main image, categories, published date, and title.
+ * - Blog images and titles are clickable, linking to the blog's detail page.
+ * - Utilizes Tailwind CSS for styling and layout.
+ * - Formats the published date using `dayjs`.
+ *
+ * @component
+ * @returns {JSX.Element} A section containing the latest blog posts.
+ */
+
+export default async function LatestBlog() {
   const blogs = await getLatestBlogs();
   return (
     <div className="mb-10 lg:mb-20">
@@ -59,4 +73,3 @@ const LatestBlog = async () => {
   );
 };
 
-export default LatestBlog;

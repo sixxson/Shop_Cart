@@ -29,7 +29,22 @@ const extraData = [
   },
 ];
 
-const ShopByBrands = async () => {
+/**
+ * Asynchronous React component that displays a section for shopping by brands.
+ *
+ * Fetches all available brands using `getAllBrands()` and renders them as clickable links,
+ * each displaying the brand's image. Also displays additional information or features
+ * from `extraData` in a grid layout below the brands.
+ *
+ * @returns {Promise<JSX.Element>} A promise that resolves to the rendered ShopByBrands component.
+ *
+ * @remarks
+ * - Uses Tailwind CSS classes for styling and responsive design.
+ * - Expects `getAllBrands`, `urlFor`, `Title`, `Link`, `Image`, and `extraData` to be available in scope.
+ * - Each brand is linked to the shop page with a query parameter for filtering by brand.
+ */
+
+export default async function ShopByBrands () {
   const brands = await getAllBrands();
   return (
     <div className="mb-10 lg:mb-20 bg-none p-5 lg:p-7 rounded-md">
@@ -82,5 +97,3 @@ const ShopByBrands = async () => {
     </div>
   );
 };
-
-export default ShopByBrands;

@@ -5,7 +5,7 @@ import {
   Metadata,
 } from "@/actions/createCheckoutSession";
 import EmptyCart from "@/components/Cart/EmptyCart";
-import NoAccess from "@/components/Cart/NoAccess";
+import NoAccess from "@/components/NoAccess";
 import PriceFormatter from "@/components/PriceFormatter";
 import ProductSideMenu from "@/components/ProductSideMenu";
 import QuantityButtons from "@/components/QuantityButtons";

@@ -80,7 +80,7 @@ export default function HomeBanner() {
         {banners.map((banner, index) => (
           <Image
             key={banner._id}
-            src={urlFor(banner.image).url()}
+            src={urlFor(banner).url()}
             alt="Banner"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"
               }`}

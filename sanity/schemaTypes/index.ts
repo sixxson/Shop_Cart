@@ -1,17 +1,19 @@
 import { type SchemaTypeDefinition } from "sanity";
-import { categoryType } from "./categoryType";
+import { addressType } from "./addressType";
+import { authorType } from "./authorType";
+import { bannerType } from "./bannerType";
+import { blogType } from "./blogType";
 import { blockContentType } from "./blockContentType";
+import { blogCategoryType } from "./blogCategoryType";
+import { brandType } from "./brandTypes";
+import { categoryType } from "./categoryType";
 import { productType } from "./productType";
 import { orderType } from "./orderType";
-import { brandType } from "./brandTypes";
-import { blogType } from "./blogType";
-import { blogCategoryType } from "./blogCategoryType";
-import { authorType } from "./authorType";
-import { addressType } from "./addressType";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     categoryType,
+    bannerType,
     blockContentType,
     productType,
     orderType,

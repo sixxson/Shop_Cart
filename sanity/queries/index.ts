@@ -1,5 +1,6 @@
 import { sanityFetch } from "../lib/live";
 import {
+  ALL_BANNER_QUERY,
   BLOG_CATEGORIES,
   BRAND_QUERY,
   BRANDS_QUERY,
@@ -151,6 +152,19 @@ const getOthersBlog = async (slug: string, quantity: number) => {
     return [];
   }
 };
+
+const getAllBanner = async () => {
+  try {
+    const { data } = await sanityFetch({
+      query: ALL_BANNER_QUERY,
+    });
+    return data ?? [];
+  } catch (error) {
+    console.error("Error fetching all banners:", error);
+    return [];
+  }
+};
+
 export {
   getCategories,
   getAllBrands,
@@ -162,5 +176,6 @@ export {
   getAllBlogs,
   getSingleBlog,
   getBlogCategories,
+  getAllBanner, 
   getOthersBlog,
 };

@@ -3,16 +3,41 @@ import FavoriteButton from "@/components/FavoriteButton";
 import PriceView from "@/components/PriceView";
 import ProductCharacteristics from "@/components/Detail/ProductCharacteristics";
 import { getProductBySlug } from "@/sanity/queries";
-import { CircleHelp, CornerDownLeft, Share, SplitIcon, StarIcon, Truck, Undo2 } from "lucide-react";
+import {
+  CircleHelp,
+  CornerDownLeft,
+  Share,
+  SplitIcon,
+  StarIcon,
+  Truck,
+  Undo2,
+} from "lucide-react";
 import { notFound } from "next/navigation";
 import React from "react";
 import ImageView from "@/components/Detail/ImageView";
 
-const SingleProductPage = async ({
+export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) => {
+}) {
+  const { slug } = await params;
+  const product = await getProductBySlug(slug);
+  return {
+    title: product?.name
+      ? `${product.name} - Shopcart online store`
+      : "Shopcart online store",
+    description:
+      product?.description ||
+      "Shopcart online store, Your one stop shop for all your needs",
+  };
+}
+
+export default async function SingleProductPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
   if (!product) {
@@ -104,6 +129,4 @@ const SingleProductPage = async ({
       </div>
     </div>
   );
-};
-
-export default SingleProductPage;
+}

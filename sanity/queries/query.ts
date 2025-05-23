@@ -81,8 +81,17 @@ const OTHERS_BLOG_QUERY = defineQuery(`*[
     "slug": slug.current,
   }
 }`);
+
+const ALL_BANNER_QUERY = defineQuery(
+  `*[_type == "banner"]{
+  title,
+  description,
+  image,
+}`)
+
 export {
   BRANDS_QUERY,
+  ALL_BANNER_QUERY,
   LATEST_BLOG_QUERY,
   DEAL_PRODUCTS,
   PRODUCT_BY_SLUG_QUERY,

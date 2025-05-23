@@ -2,61 +2,69 @@
 
 ### 1. Product Listing
 
-- Hiển thị danh sách sản phẩm với hình ảnh, tên, giá, mô tả ngắn.
-- Xem chi tiết sản phẩm, đánh giá, số lượng còn lại.
-- Dữ liệu lấy từ database (Sanity CMS).
+- Display a list of products with images, name, price, and short description.
+- View product details, ratings, and stock quantity.
+- Data fetched from the database (Sanity CMS).
 
 ### 2. Product Search & Filter
 
-- Tìm kiếm sản phẩm theo tên, danh mục.
-- Lọc theo giá, loại, đánh giá.
-- UI cập nhật động theo kết quả tìm kiếm/lọc.
+- Search products by name or category.
+- Filter by price, type, and rating.
+- UI updates dynamically based on search/filter results.
 
 ### 3. Shopping Cart
 
-- Thêm/xóa/cập nhật số lượng sản phẩm trong giỏ.
-- Hiển thị tổng tiền, số lượng.
-- Quản lý giỏ hàng bằng Zustand, lưu localStorage.
+- Add/remove/update product quantity in the cart.
+- Display total price and quantity.
+- Cart managed by Zustand, saved to localStorage.
 
 ### 4. User Authentication
 
-- Đăng ký, đăng nhập, đăng xuất với Clerk.
-- Bảo vệ route, kiểm tra quyền truy cập.
+- Register, login, logout with Clerk.
+- Route protection and access control.
 
 ### 5. Order Placement & History
 
-- Đặt hàng, lưu đơn vào database.
-- Xem lịch sử đơn hàng theo user.
+- Place orders and save them to the database.
+- View order history by user.
 
 ### 6. Admin Dashboard
 
-- CRUD sản phẩm, đơn hàng, người dùng.
-- Chỉ admin truy cập, phân quyền.
+- CRUD for products, orders, and users.
+- Admin-only access and permissions.
 
 ### 7. Sales Statistics (Admin)
 
-- Thống kê doanh thu, đơn hàng, sản phẩm bán chạy.
-- Hiển thị biểu đồ với recharts.
+- Revenue, order, and best-selling product statistics.
+- Display charts with recharts.
 
 ### 8. Responsive Design
 
-- Giao diện tối ưu cho desktop/mobile.
-- Sử dụng Tailwind CSS, Radix UI.
+- Optimized UI for desktop/mobile.
+- Uses Tailwind CSS, Radix UI.
+
+### 9. Wishlist
+
+- Add/remove products to wishlist.
+- Wishlist saved per user (logged in) or to localStorage (guest).
+- Quickly view saved favorite products.
 
 ---
 
 ## Getting Started
 
-1. **Clone repo & cài dependencies:**
+1. **Clone the repo & install dependencies:**
+
    ```bash
    git clone <repo-url>
    cd ShopCart-mern-app
    npm install
-   # hoặc yarn/pnpm/bun install
+   # or yarn/pnpm/bun install
    ```
 
-2. **Cấu hình biến môi trường:**
-   Tạo file `.env.local` ở thư mục gốc, ví dụ:
+2. **Configure environment variables:**
+   Create a `.env.local` file in the root directory, for example:
+
    ```
    # .env.local
    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=...
@@ -68,47 +76,48 @@
    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=...
    ```
 
-3. **Chạy development server:**
+3. **Run the development server:**
+
    ```bash
    npm run dev
-   # hoặc yarn dev, pnpm dev, bun dev
+   # or yarn dev, pnpm dev, bun dev
    ```
 
-4. **Truy cập:** [http://localhost:3000](http://localhost:3000)
+4. **Visit:** [http://localhost:3000](http://localhost:3000)
 
 ---
 
 ## Libraries Used
 
-| Library                       | Description / Use Case                |
-|-------------------------------|---------------------------------------|
-| **Next.js**                   | React framework, SSR, routing         |
-| **React**                     | UI library                            |
-| **Sanity**                    | Headless CMS, quản lý sản phẩm        |
-| **Clerk**                     | Xác thực người dùng                   |
-| **Radix UI**                  | UI components                         |
-| **Tailwind CSS**              | CSS framework                         |
-| **styled-components**         | CSS-in-JS                             |
-| **zustand**                   | State management                      |
-| **zod**                       | Validation                            |
-| **react-hook-form**           | Form & validation                     |
-| **recharts**                  | Biểu đồ thống kê                      |
-| **dayjs, date-fns**           | Xử lý ngày tháng                      |
-| **react-hot-toast, sonner**   | Thông báo UI                          |
-| **embla-carousel-react**      | Carousel/slider                       |
-| **cmdk**                      | Command palette                       |
-| **react-day-picker**          | Date picker                           |
-| **vaul**                      | Bottom sheet UI                       |
-| **class-variance-authority**  | Quản lý className                     |
-| **clsx**                      | Quản lý className                     |
-| **motion**                    | Animation                             |
-| **input-otp**                 | Nhập mã OTP                           |
-| **react-resizable-panels**    | Kéo thả panel                         |
-| **stripe**                    | Thanh toán                            |
-| **lucide-react**              | Icon set                              |
-| **next-themes**               | Đổi theme (dark/light)                |
-| **next-sanity**               | Next.js + Sanity integration          |
-| **tailwind-merge**            | Merge className Tailwind              |
+| Library                      | Description / Use Case         |
+| ---------------------------- | ------------------------------ |
+| **Next.js**                  | React framework, SSR, routing  |
+| **React**                    | UI library                     |
+| **Sanity**                   | Headless CMS, product management |
+| **Clerk**                    | User authentication            |
+| **Radix UI**                 | UI components                  |
+| **Tailwind CSS**             | CSS framework                  |
+| **styled-components**        | CSS-in-JS                      |
+| **zustand**                  | State management               |
+| **zod**                      | Validation                     |
+| **react-hook-form**          | Form & validation              |
+| **recharts**                 | Statistics charts              |
+| **dayjs, date-fns**          | Date/time handling             |
+| **react-hot-toast, sonner**  | UI notifications               |
+| **embla-carousel-react**     | Carousel/slider                |
+| **cmdk**                     | Command palette                |
+| **react-day-picker**         | Date picker                    |
+| **vaul**                     | Bottom sheet UI                |
+| **class-variance-authority** | ClassName management           |
+| **clsx**                     | ClassName management           |
+| **motion**                   | Animation                      |
+| **input-otp**                | OTP input                      |
+| **react-resizable-panels**   | Resizable panels               |
+| **stripe**                   | Payment                        |
+| **lucide-react**             | Icon set                       |
+| **next-themes**              | Theme switching (dark/light)   |
+| **next-sanity**              | Next.js + Sanity integration   |
+| **tailwind-merge**           | Merge Tailwind classNames      |
 
 ---
 

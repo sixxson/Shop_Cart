@@ -64,7 +64,46 @@ export const productType = defineType({
       type: "reference",
       to: { type: "brand" },
     }),
-
+    defineField({
+      name: "variants",
+      title: "Product Variants",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          name: "variant",
+          title: "Variant",
+          fields: [
+            {
+              name: "color",
+              title: "Color",
+              type: "string",
+            },
+            {
+              name: "size",
+              title: "Size",
+              type: "string",
+            },
+            {
+              name: "price",
+              title: "Variant Price",
+              type: "number",
+            },
+            {
+              name: "stock",
+              title: "Variant Stock",
+              type: "number",
+            },
+            {
+              name: "images",
+              title: "Variant Images",
+              type: "array",
+              of: [{ type: "image", options: { hotspot: true } }],
+            },
+          ],
+        },
+      ],
+    }),
     defineField({
       name: "status",
       title: "Product Status",

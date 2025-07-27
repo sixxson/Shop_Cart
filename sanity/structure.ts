@@ -1,7 +1,19 @@
-import type {StructureResolver} from 'sanity/structure'
+import type { StructureResolver } from 'sanity/structure'
+import { RevenueStatsPane } from "./components/RevenueStatsPane"
 
-// https://www.sanity.io/docs/structure-builder-cheat-sheet
 export const structure: StructureResolver = (S) =>
   S.list()
     .title('Content')
-    .items(S.documentTypeListItems())
+    .items([
+      ...S.documentTypeListItems(), // hiện tất cả schema documents mặc định
+      S.divider(),
+      S.listItem()
+        .title('📈 Thống kê doanh thu')
+        .child(
+          S.component({
+            id: 'revenue-stats-pane',
+            title: 'Tổng doanh thu',
+            component: RevenueStatsPane,
+          })
+        ),
+    ])

@@ -17,7 +17,7 @@ interface StoreState {
   getSubTotalPrice: () => number;
   getItemCount: (productId: string) => number;
   getGroupedItems: () => CartItem[];
-  //   // favorite
+  // favorite 
   favoriteProduct: Product[];
   addToFavorite: (product: Product) => Promise<void>;
   removeFromFavorite: (productId: string) => void;

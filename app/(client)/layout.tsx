@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/Theme/Theme-provider";
-import { ClerkProvider } from "@clerk/nextjs";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
 
@@ -18,19 +17,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
-        <div className="flex flex-col min-h-screen">
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </div>
-      </ThemeProvider>
-    </ClerkProvider>
+
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <div className="flex flex-col min-h-screen">
+        <SiteHeader />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
+      </div>
+    </ThemeProvider>
   );
 }

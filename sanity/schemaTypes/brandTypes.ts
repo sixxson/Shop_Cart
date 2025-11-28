@@ -23,14 +23,14 @@ export const brandType = defineType({
       name: "description",
       type: "text",
     }),
-    defineField({
-      name: "image",
-      title: "Brand Image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-    }),
+      defineField({
+        name: "image",
+        title: "Brand Image",
+        type: "image",
+        options: {
+          hotspot: true,
+        },
+      }),
   ],
   preview: {
     select: {

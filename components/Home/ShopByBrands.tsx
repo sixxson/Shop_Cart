@@ -64,14 +64,14 @@ export default async function ShopByBrands () {
             href={{ pathname: "/shop", query: { brand: brand?.slug?.current } }}
             className="bg-none w-34 h-24 flex items-center justify-center rounded-md overflow-hidden hover:shadow-lg shadow-shop_dark_green/20 hoverEffect"
           >
-            {brand?.image && (
-              <Image
-                src={urlFor(brand?.image).url()}
-                alt="brandImage"
-                width={250}
-                height={250}
-                className="w-32 h-20 object-contain"
-              />
+              {brand?.image && (
+                <Image
+                  src={urlFor(brand?.image).url()}
+                  alt="brandImage"
+                  width={500}
+                  height={250}
+                  className={"w-full h-full object-contain"}
+                />
             )}
           </Link>
         ))}

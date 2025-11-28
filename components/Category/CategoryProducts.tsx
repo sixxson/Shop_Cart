@@ -29,7 +29,7 @@ const CategoryProducts = ({ categories, slug }: Props) => {
     try {
       const query = `
         *[_type == 'product' && references(*[_type == "category" && slug.current == $categorySlug]._id)] | order(name asc){
-        ...,"categories": categories[]->title}
+        ...,"categories": categories->title}
       `;
       const data = await client.fetch(query, { categorySlug });
       setProducts(data);

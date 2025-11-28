@@ -8,7 +8,7 @@ const SignIn = () => {
   return (
     <SignInButton mode="modal">
       <Button className="text-sm font-semibold hover:text-darkColor text-lightColor hover:cursor-pointer hoverEffect">
-        <User className="mr-2" />
+        <User />
       </Button>
     </SignInButton>
   );
